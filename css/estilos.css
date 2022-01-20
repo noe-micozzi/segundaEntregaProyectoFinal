@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo{
+    width: 10%;     
+}
+
+.fondoHeader{
+    background-color: #D3E4CD; 
+}
+
+
+.nav-link{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color:white;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    position: relative;
+}
+
+.nav-link:hover{
+    color: #99A799;
+}
+
+/*Animaciones header*/
+.nav-link::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #99A799;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-link:active{
+    font-weight: bold;
+}
+.nav-link:visited{
+    color:white;
+    }
+body {
+    background-color: #E4CDA7;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    color: rgb(2, 2, 2);
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+}
+
+h2 {
+    margin-top: 1rem;
+    margin-left: 0.2rem;
+}
+/*Animacion titulo*/
+.title-container{
+    height: 20vh;
+    background-color: #99A799;
+}
+.text-container{
+    text-align: center;
+    position: absolute;
+    background-color: #99A799;
+    width: 80vw;
+    top: 20%;
+    left: 40%;     
+    margin-bottom: 30px;
+    max-width: 500px;
+    transform: translate(-25%, -25%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+
+}
+.text-container p{
+    text-transform: uppercase;
+}
+.text1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    position: relative;
+    animation: text 2s 1;
+}
+
+@keyframes text{
+    0%{
+        color: black;
+        margin-bottom: -40px;
+    }
+    30%{
+        letter-spacing: 1.5rem;
+        margin-bottom: -40px;
+    }
+    85%{
+        letter-spacing: 0.5rem;
+        margin-bottom: -40px;
+    }
+}
+.contenedorImg{
+    width: 50vw;
+}
+
+/* GALERIA GRID */
+.contenedorGaleria{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 300px;
+    padding: 25px;
+    grid-gap: 15px;
+}
+
+.itemGaleria{
+    position: relative;
+}
+
+.imgGaleria{
+    width: 100% ;
+    height: 100% ;
+    object-fit: cover;
+ }
+
+.itemGaleria:nth-child(4){
+    grid-column-start: span 2;
+ } 
+
+ .itemGaleria:nth-child(5){
+    grid-row-start: span 2;
+ }
+
+ .itemGaleria:nth-child(9){
+    grid-column-start: span 2;
+ }
+
+.tituloItem{
+    position: absolute;
+    bottom: 0;
+    color: white;
+    background: linear-gradient(rgba(255,255,255,0),rgba(0,0,0,1));
+    width: 100%;
+    margin:0;
+    padding: 5px;
+}
+
+.listaObjetivos{
+    list-style-type: square;
+    font-weight: bold;
+    margin-left: 3rem;
+}
+
+.formulario{
+    width: 50vw;
+    margin: 50px;
+}
+
+.divTabla{
+    margin: 10px;
+    width: 80vw;
+}
+
+
+footer a{
+    color: black;
+    font-style: italic;
+}
+
+/*media queries*/
+@media (max-width:873px){
+    .logo{
+        width: 20%;
+    }
+    .formulario{
+        margin: 5px;
+    }
+
+    h1{      
+        text-align: center;    
+    }
+    .nav{
+        flex-direction: column;
+    }    
+ 
+    .title-container{
+        height: 0%;
+    }
+
+    .text1{
+        animation: none;
+    }
+}
